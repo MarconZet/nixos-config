@@ -109,7 +109,6 @@
   ];
   programs.vim.defaultEditor = true;
   virtualisation.lxd.enable = true;
-  virtualisation.lxc.enable = true;
   virtualisation.lxc.lxcfs.enable = true;
   virtualisation.vmware.guest.enable = true;
 
