@@ -82,7 +82,7 @@
   users.users.marcin = {
     isNormalUser = true;
     description = "Marcin";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "lxd"];
     packages = with pkgs; [
       firefox
       vscode
