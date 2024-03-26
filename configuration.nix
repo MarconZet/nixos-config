@@ -103,11 +103,10 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   environment.systemPackages = with pkgs; [
-    vim
     git
     alejandra
   ];
-
+  programs.vim.defaultEditor = true;
   virtualisation.lxd.enable = true;
   virtualisation.vmware.guest.enable = true;
   # Some programs need SUID wrappers, can be configured further or are
