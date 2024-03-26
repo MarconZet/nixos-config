@@ -104,7 +104,6 @@
 
   environment.systemPackages = with pkgs; [
     git
-    lxc
     tree
     alejandra
   ];
