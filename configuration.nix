@@ -104,6 +104,7 @@
 
   environment.systemPackages = with pkgs; [
     git
+    tree
     alejandra
   ];
   programs.vim.defaultEditor = true;
