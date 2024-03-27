@@ -5,7 +5,6 @@
   ...
 }: {
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
   ];
@@ -43,14 +42,9 @@
     LC_TIME = "pl_PL.UTF-8";
   };
 
-  # Enable the X11 windowing system.
   services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-
-  # Configure keymap in X11
   services.xserver = {
     layout = "pl";
     xkbVariant = "";
@@ -108,10 +102,37 @@
     alejandra
   ];
   programs.vim.defaultEditor = true;
-  virtualisation.lxd.enable = true;
+  virtualisation.lxd = {
+    enable = true;
+    recommendedSysctlSettings = true;
+  };
   virtualisation.lxc.lxcfs.enable = true;
   virtualisation.vmware.guest.enable = true;
+  networking.bridges = {mylxdbr0.interfaces = [];};
 
+  #networking.localCommands = ''
+  #  ip address add 192.168.57.1/24 dev mylxdbr0
+  #'';
+
+  #networking.firewall.extraCommands = ''
+  #  iptables -A INPUT -i mylxdbr0 -m comment --comment "my rule for LXD network mylxdbr0" -j ACCEPT
+
+  #  # These three technically aren't needed, since by default the FORWARD and
+  #  # OUTPUT firewalls accept everything everything, but lets keep them in just
+  #  # in case.
+  #  iptables -A FORWARD -o mylxdbr0 -m comment --comment "my rule for LXD network mylxdbr0" -j ACCEPT
+  #  iptables -A FORWARD -i mylxdbr0 -m comment --comment "my rule for LXD network mylxdbr0" -j ACCEPT
+  #  iptables -A OUTPUT -o mylxdbr0 -m comment --comment "my rule for LXD network mylxdbr0" -j ACCEPT
+
+  #  iptables -t nat -A POSTROUTING -s 192.168.57.0/24 ! -d 192.168.57.0/24 -m comment --comment "my rule for LXD network mylxdbr0" -j MASQUERADE
+  #'';
+
+  boot.kernel.sysctl = {
+    "net.ipv4.conf.all.forwarding" = true;
+    "net.ipv4.conf.default.forwarding" = true;
+  };
+
+  boot.kernelModules = ["nf_nat_ftp"];
   security.apparmor.enable = true;
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -121,15 +142,10 @@
   #   enableSSHSupport = true;
   # };
 
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
-  # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
