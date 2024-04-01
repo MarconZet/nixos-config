@@ -99,7 +99,7 @@
   virtualisation.vmware.guest.enable = true;
 
   networking = {
-    hostName = "nixos"; # Define your hostname.
+    hostName = "nixos";
     networkmanager.enable = true;
     nftables.enable = true;
     bridges = {myincbr0.interfaces = [];};
