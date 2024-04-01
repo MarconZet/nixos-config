@@ -1,0 +1,20 @@
+config:
+  images.auto_update_interval: "0"
+networks: []
+storage_pools:
+  - config:
+      source: /var/lib/lxd/storage-pools/default
+    description: ""
+    name: default
+    driver: dir
+profiles:
+  - config: {}
+    description: Default profile
+    devices:
+      root:
+        path: /
+        pool: default
+        type: disk
+    name: default
+projects: []
+cluster: null
