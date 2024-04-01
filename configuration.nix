@@ -108,7 +108,7 @@
     '';
     firewall = {
       enable = true;
-      extraInputRules = "";
+      extraInputRules = "iifname \"myincbr0\" accept";
     };
   };
 
