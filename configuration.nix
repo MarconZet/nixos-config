@@ -103,14 +103,14 @@
     networkmanager.enable = true;
     nftables.enable = true;
     bridges = {myincbr0.interfaces = [];};
+    localCommands = ''
+      ip address add 192.168.55.1/24 dev myincbr0
+    '';
+    firewall = {
+      enable = true;
+      extraInputRules = "";
+    };
   };
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # networking.firewall.enable = false;
-
-  #networking.localCommands = ''
-  #  ip address add 192.168.57.1/24 dev mylxdbr0
-  #'';
 
   #networking.firewall.extraCommands = ''
   #  iptables -A INPUT -i mylxdbr0 -m comment --comment "my rule for LXD network mylxdbr0" -j ACCEPT
