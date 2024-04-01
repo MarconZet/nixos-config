@@ -14,16 +14,6 @@
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
   # Set your time zone.
   time.timeZone = "Europe/Warsaw";
 
@@ -108,8 +98,15 @@
   virtualisation.lxc.lxcfs.enable = true;
   virtualisation.vmware.guest.enable = true;
 
-  networking.nftables.enable = true;
-  networking.bridges = {myincbr0.interfaces = [];};
+  networking = {
+    hostName = "nixos"; # Define your hostname.
+    networkmanager.enable = true;
+    nftables.enable = true;
+    bridges = {myincbr0.interfaces = [];};
+  };
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # networking.firewall.enable = false;
 
   #networking.localCommands = ''
   #  ip address add 192.168.57.1/24 dev mylxdbr0
@@ -144,10 +141,6 @@
   # };
 
   # services.openssh.enable = true;
-
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
