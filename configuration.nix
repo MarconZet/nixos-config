@@ -66,7 +66,7 @@
   users.users.marcin = {
     isNormalUser = true;
     description = "Marcin";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "incus-admin"];
     packages = with pkgs; [
       firefox
       vscode
