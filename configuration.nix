@@ -89,7 +89,6 @@
     git
     tree
     alejandra
-    apparmor-bin-utils
   ];
   programs.vim.defaultEditor = true;
   virtualisation.incus = {
