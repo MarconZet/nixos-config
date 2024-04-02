@@ -102,13 +102,13 @@
     hostName = "nixos";
     networkmanager.enable = true;
     nftables.enable = true;
-    bridges = {myincbr0.interfaces = [];};
+    bridges = {myincusbr0.interfaces = [];};
     localCommands = ''
-      ip address add 192.168.55.1/24 dev myincbr0
+      ip address add 192.168.55.1/24 dev myincusbr0
     '';
     firewall = {
       enable = true;
-      extraInputRules = "iifname \"myincbr0\" accept";
+      extraInputRules = "iifname \"myincusbr0\" accept";
     };
     nftables.tables."nat".family = "ip";
     nftables.tables."nat".content = ''
