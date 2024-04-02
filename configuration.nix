@@ -71,7 +71,7 @@
       firefox
       vscode
     ];
-    password = "dupa";
+    password = "a";
   };
   users.mutableUsers = false;
 
