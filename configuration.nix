@@ -69,7 +69,6 @@
     extraGroups = ["networkmanager" "wheel" "incus-admin"];
     packages = with pkgs; [
       firefox
-      vscode
     ];
     password = "a";
   };
@@ -90,6 +89,7 @@
     git
     tree
     alejandra
+    apparmor-bin-utils
   ];
   programs.vim.defaultEditor = true;
   virtualisation.incus = {
