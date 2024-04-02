@@ -110,6 +110,13 @@
       enable = true;
       extraInputRules = "iifname \"myincbr0\" accept";
     };
+    nftables.tables."nat".family = "ip";
+    nftables.tables."nat".content = ''
+      chain postrouting {
+        type nat hook postrouting priority 0; policy accept;
+        ip saddr 192.168.57.0/24 ip daddr != 192.168.57.0/24 masquerade
+      }
+    '';
   };
 
   #networking.firewall.extraCommands = ''
