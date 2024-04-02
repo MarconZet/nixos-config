@@ -114,7 +114,7 @@
     nftables.tables."nat".content = ''
       chain postrouting {
         type nat hook postrouting priority 0; policy accept;
-        ip saddr 192.168.57.0/24 ip daddr != 192.168.57.0/24 masquerade
+        ip saddr 192.168.55.0/24 ip daddr != 192.168.55.0/24 masquerade
       }
     '';
   };
