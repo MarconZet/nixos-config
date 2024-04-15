@@ -55,11 +55,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
 
@@ -91,9 +86,7 @@
     alejandra
   ];
   programs.vim.defaultEditor = true;
-  virtualisation.incus = {
-    enable = true;
-  };
+  virtualisation.incus.enable = true;
   virtualisation.lxc.lxcfs.enable = true;
   virtualisation.vmware.guest.enable = true;
 
@@ -102,9 +95,9 @@
     networkmanager.enable = true;
     nftables.enable = true;
     bridges = {myincusbr0.interfaces = [];};
-    localCommands = ''
-      ip address add 192.168.55.1/24 dev myincusbr0
-    '';
+    #    localCommands = ''
+    #      ip address add 192.168.55.1/24 dev myincusbr0
+    #    '';
     firewall = {
       enable = true;
       extraInputRules = "iifname \"myincusbr0\" accept";
@@ -118,18 +111,32 @@
     '';
   };
 
-  #networking.firewall.extraCommands = ''
-  #  iptables -A INPUT -i mylxdbr0 -m comment --comment "my rule for LXD network mylxdbr0" -j ACCEPT
+  services.dnsmasq = {
+    enable = true;
+    settings = {
+      # upstream DNS servers
+      server = ["9.9.9.9" "8.8.8.8" "1.1.1.1"];
+      # sensible behaviours
+      domain-needed = true;
+      bogus-priv = true;
+      no-resolv = true;
 
-  #  # These three technically aren't needed, since by default the FORWARD and
-  #  # OUTPUT firewalls accept everything everything, but lets keep them in just
-  #  # in case.
-  #  iptables -A FORWARD -o mylxdbr0 -m comment --comment "my rule for LXD network mylxdbr0" -j ACCEPT
-  #  iptables -A FORWARD -i mylxdbr0 -m comment --comment "my rule for LXD network mylxdbr0" -j ACCEPT
-  #  iptables -A OUTPUT -o mylxdbr0 -m comment --comment "my rule for LXD network mylxdbr0" -j ACCEPT
+      # Cache dns queries.
+      cache-size = 1000;
 
-  #  iptables -t nat -A POSTROUTING -s 192.168.57.0/24 ! -d 192.168.57.0/24 -m comment --comment "my rule for LXD network mylxdbr0" -j MASQUERADE
-  #'';
+      dhcp-range = ["myincusbr0,192.168.55.50,192.168.55.254,24h"];
+      interface = "myincusbr0";
+      dhcp-host = "192.168.55.1";
+
+      # local domains
+      local = "/lan/";
+      domain = "lan";
+      expand-hosts = true;
+
+      # don't use /etc/hosts as this would advertise surfer as localhost
+      no-hosts = true;
+    };
+  };
 
   boot.kernel.sysctl = {
     "net.ipv4.conf.all.forwarding" = true;
