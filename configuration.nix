@@ -95,9 +95,9 @@
     networkmanager.enable = true;
     nftables.enable = true;
     bridges = {myincusbr0.interfaces = [];};
-    #    localCommands = ''
-    #      ip address add 192.168.55.1/24 dev myincusbr0
-    #    '';
+    localCommands = ''
+      ip address add 192.168.55.1/24 dev myincusbr0
+    '';
     firewall = {
       enable = true;
       extraInputRules = "iifname \"myincusbr0\" accept";
