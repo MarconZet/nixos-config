@@ -143,7 +143,7 @@
     "net.ipv4.conf.default.forwarding" = true;
   };
 
-  boot.kernelModules = ["nf_nat_ftp"];
+  boot.kernelModules = ["nf_nat_ftp" "br_netfilter"];
   security.apparmor.enable = false;
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
