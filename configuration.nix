@@ -68,6 +68,7 @@
     password = "a";
   };
   users.mutableUsers = false;
+  users.defaultUserShell = pkgs.zsh;
 
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
@@ -85,6 +86,7 @@
     tree
     alejandra
   ];
+  programs.zsh.enable = true;
   programs.vim.defaultEditor = true;
   virtualisation.incus.enable = true;
   virtualisation.lxc.lxcfs.enable = true;
