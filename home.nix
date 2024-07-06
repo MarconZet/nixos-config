@@ -72,10 +72,9 @@
   #
   #  /etc/profiles/per-user/marcin/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
-    # EDITOR = "emacs";
-  };
+  # home.sessionVariables
 
+  programs.zsh.profileExtra = "~/vulkan/1.3.283.0/setup-env.sh";
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
