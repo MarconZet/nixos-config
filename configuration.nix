@@ -102,7 +102,7 @@
     ohMyZsh.enable = true;
     ohMyZsh.theme = "af-magic";
     shellAliases = {
-      k = "kubectl";
+      ek = "echo working";
     };
     interactiveShellInit = ''
       source ~/vulkan/1.3.283.0/setup-env.sh";
