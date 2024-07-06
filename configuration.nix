@@ -97,8 +97,12 @@
     enable = true;
     autosuggestions.enable = true;
     autosuggestions.async = true;
+    enableGlobalCompInit = true;
+    syntaxHighlighting.enable = true;
     oh-my-zsh.enable = true;
-    interactiveShellInit = "source ~/vulkan/1.3.283.0/setup-env.sh";
+    interactiveShellInit = ''
+      source ~/vulkan/1.3.283.0/setup-env.sh";
+    '';
   };
 
   nixpkgs.config.allowUnfree = true;
