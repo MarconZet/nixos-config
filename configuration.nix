@@ -101,6 +101,9 @@
     syntaxHighlighting.enable = true;
     ohMyZsh.enable = true;
     ohMyZsh.theme = "af-magic";
+    shellAliases = {
+      k = "kubectl";
+    };
     interactiveShellInit = ''
       source ~/vulkan/1.3.283.0/setup-env.sh";
     '';
