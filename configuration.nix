@@ -66,9 +66,9 @@
       firefox
     ];
     password = "a";
+    shell = pkgs.zsh;
   };
   users.mutableUsers = false;
-  users.defaultUserShell = pkgs.zsh;
 
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
@@ -76,6 +76,22 @@
       "marcin" = import ./home.nix;
     };
   };
+
+  security.sudo.extraRules = [
+    {
+      users = ["marcin"];
+      commands = [
+        {
+          command = "/run/current-system/sw/bin/nixos-rebuild";
+          options = ["NOPASSWD"];
+        }
+        {
+          command = "/run/current-system/sw/bin/nix-collect-garbage";
+          options = ["NOPASSWD"];
+        }
+      ];
+    }
+  ];
 
   programs.zsh = {
     enable = true;
