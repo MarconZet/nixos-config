@@ -73,9 +73,7 @@
   #  /etc/profiles/per-user/marcin/etc/profile.d/hm-session-vars.sh
   #
   # home.sessionVariables
-  programs.zsh.enable = true;
-  programs.zsh.autosuggestion.enable = true;
-  programs.zsh.profileExtra = "source ~/vulkan/1.3.283.0/setup-env.sh";
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

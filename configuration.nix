@@ -77,6 +77,14 @@
     };
   };
 
+  programs.zsh = {
+    enable = true;
+    autosuggestions.enable = true;
+    autosuggestions.async = true;
+    oh-my-zsh.enable = true;
+    interactiveShellInit = "source ~/vulkan/1.3.283.0/setup-env.sh";
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -86,7 +94,6 @@
     tree
     alejandra
   ];
-  programs.zsh.enable = true;
   programs.vim.defaultEditor = true;
   virtualisation.incus.enable = true;
   virtualisation.lxc.lxcfs.enable = true;
