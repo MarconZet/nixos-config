@@ -105,7 +105,7 @@
       ek = "echo working";
     };
     interactiveShellInit = ''
-      source ~/vulkan/1.3.283.0/setup-env.sh";
+      source "/home/marcin/vulkan/1.3.283.0/setup-env.sh";
     '';
   };
 
