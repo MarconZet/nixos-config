@@ -13,7 +13,7 @@ fi
 alejandra . &>/dev/null \
   || ( alejandra . ; echo "formatting failed!" && exit 1)
 
-git diff -U0 '*.nix'
+git --no-pager diff -U0 '*.nix'
 
 echo "NixOS Rebuilding..."
 

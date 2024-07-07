@@ -99,6 +99,7 @@
     autosuggestions.async = true;
     enableGlobalCompInit = true;
     syntaxHighlighting.enable = true;
+    histSize = 10000;
     ohMyZsh.enable = true;
     ohMyZsh.theme = "af-magic";
     interactiveShellInit = ''
