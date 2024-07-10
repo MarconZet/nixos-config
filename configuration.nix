@@ -132,6 +132,9 @@
     tree
     alejandra
     wget
+    vulkan-loader
+    vulkan-validation-layers
+    vulkan-tools
   ];
   programs.vim.defaultEditor = true;
   #virtualisation.incus.enable = true;
