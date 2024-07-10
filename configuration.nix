@@ -120,9 +120,9 @@
     histSize = 10000;
     ohMyZsh.enable = true;
     ohMyZsh.theme = "af-magic";
-    #interactiveShellInit = ''
-    #  source "/home/marcin/vulkan/1.3.283.0/setup-env.sh";
-    #'';
+    interactiveShellInit = ''
+      source "/home/marcin/vulkan/1.3.283.0/setup-env.sh";
+    '';
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
