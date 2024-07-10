@@ -131,6 +131,7 @@
     git
     tree
     alejandra
+    wget
   ];
   programs.vim.defaultEditor = true;
   #virtualisation.incus.enable = true;
