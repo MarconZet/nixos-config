@@ -6,23 +6,26 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    #inputs.home-manager.nixosModules.default
+    inputs.home-manager.nixosModules.default
   ];
 
-boot.loader.grub = {
+  boot.loader.grub = {
     enable = true;
     zfsSupport = true;
     efiSupport = true;
     efiInstallAsRemovable = true;
     mirroredBoots = [
-      { devices = [ "nodev"]; path = "/boot"; }
+      {
+        devices = ["nodev"];
+        path = "/boot";
+      }
     ];
   };
 
-nixpkgs.config.allowUnfree = true;
-hardware.opengl = {
+  nixpkgs.config.allowUnfree = true;
+  hardware.opengl = {
     enable = true;
-  }; 
+  };
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = false;
@@ -62,16 +65,16 @@ hardware.opengl = {
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-#  sound.enable = true;
-#  hardware.pulseaudio.enable = false;
-#  security.rtkit.enable = true;
-#  services.pipewire = {
-#    enable = true;
-#    alsa.enable = true;
-#    alsa.support32Bit = true;
-#    pulse.enable = true;
-#    #media-session.enable = true;
-#  };
+  #  sound.enable = true;
+  #  hardware.pulseaudio.enable = false;
+  #  security.rtkit.enable = true;
+  #  services.pipewire = {
+  #    enable = true;
+  #    alsa.enable = true;
+  #    alsa.support32Bit = true;
+  #    pulse.enable = true;
+  #    #media-session.enable = true;
+  #  };
 
   users.users.marcin = {
     isNormalUser = true;
@@ -117,9 +120,9 @@ hardware.opengl = {
     histSize = 10000;
     ohMyZsh.enable = true;
     ohMyZsh.theme = "af-magic";
-#    interactiveShellInit = ''
-#      source "/home/marcin/vulkan/1.3.283.0/setup-env.sh";
-#    '';
+    #    interactiveShellInit = ''
+    #      source "/home/marcin/vulkan/1.3.283.0/setup-env.sh";
+    #    '';
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -130,57 +133,57 @@ hardware.opengl = {
     alejandra
   ];
   programs.vim.defaultEditor = true;
-#  virtualisation.incus.enable = true;
-#  virtualisation.lxc.lxcfs.enable = true;
+  #  virtualisation.incus.enable = true;
+  #  virtualisation.lxc.lxcfs.enable = true;
 
-networking.hostId = "09400c19";
+  networking.hostId = "09400c19";
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;
     nftables.enable = true;
-#    bridges = {myincusbr0.interfaces = [];};
-#    localCommands = ''
-#      ip address add 192.168.55.1/24 dev myincusbr0
-#    '';
+    #    bridges = {myincusbr0.interfaces = [];};
+    #    localCommands = ''
+    #      ip address add 192.168.55.1/24 dev myincusbr0
+    #    '';
     firewall = {
       enable = true;
-#      extraInputRules = "iifname \"myincusbr0\" accept";
+      #      extraInputRules = "iifname \"myincusbr0\" accept";
     };
-#    nftables.tables."nat".family = "ip";
-#    nftables.tables."nat".content = ''
-#      chain postrouting {
-#        type nat hook postrouting priority 0; policy accept;
-#        ip saddr 192.168.55.0/24 ip daddr != 192.168.55.0/24 masquerade
-#      }
-#    '';
+    #    nftables.tables."nat".family = "ip";
+    #    nftables.tables."nat".content = ''
+    #      chain postrouting {
+    #        type nat hook postrouting priority 0; policy accept;
+    #        ip saddr 192.168.55.0/24 ip daddr != 192.168.55.0/24 masquerade
+    #      }
+    #    '';
   };
 
-#  services.dnsmasq = {
-#    enable = true;
-#    settings = {
-#      # upstream DNS servers
-#      server = ["9.9.9.9" "8.8.8.8" "1.1.1.1"];
-#      # sensible behaviours
-#      domain-needed = true;
-#      bogus-priv = true;
-#      no-resolv = true;
-#
-#      # Cache dns queries.
-#      cache-size = 1000;
-#
-#      dhcp-range = ["myincusbr0,192.168.55.50,192.168.55.254,24h"];
-#      interface = "myincusbr0";
-#      dhcp-host = "192.168.55.1";
-#
-#      # local domains
-#      local = "/lan/";
-#      domain = "lan";
-#      expand-hosts = true;
-#
-#      # don't use /etc/hosts as this would advertise surfer as localhost
-#      no-hosts = true;
-#    };
-#  };
+  #  services.dnsmasq = {
+  #    enable = true;
+  #    settings = {
+  #      # upstream DNS servers
+  #      server = ["9.9.9.9" "8.8.8.8" "1.1.1.1"];
+  #      # sensible behaviours
+  #      domain-needed = true;
+  #      bogus-priv = true;
+  #      no-resolv = true;
+  #
+  #      # Cache dns queries.
+  #      cache-size = 1000;
+  #
+  #      dhcp-range = ["myincusbr0,192.168.55.50,192.168.55.254,24h"];
+  #      interface = "myincusbr0";
+  #      dhcp-host = "192.168.55.1";
+  #
+  #      # local domains
+  #      local = "/lan/";
+  #      domain = "lan";
+  #      expand-hosts = true;
+  #
+  #      # don't use /etc/hosts as this would advertise surfer as localhost
+  #      no-hosts = true;
+  #    };
+  #  };
 
   boot.kernel.sysctl = {
     "net.ipv4.conf.all.forwarding" = true;
