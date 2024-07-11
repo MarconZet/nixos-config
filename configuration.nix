@@ -140,6 +140,7 @@
     spirv-tools
     vulkan-extension-layer
     spirv-cross
+    glslang
   ];
   programs.steam.enable = true;
   programs.vim.defaultEditor = true;
