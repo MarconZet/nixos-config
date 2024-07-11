@@ -138,8 +138,6 @@
     vulkan-tools-lunarg
     vulkan-utility-libraries
     spirv-tools
-    vulkan-headers
-    spirv-headers
     vulkan-extension-layer
     spirv-cross
   ];
