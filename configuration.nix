@@ -141,6 +141,7 @@
     vulkan-extension-layer
     spirv-cross
   ];
+  programs.steam.enable = true;
   programs.vim.defaultEditor = true;
   #virtualisation.incus.enable = true;
   #virtualisation.lxc.lxcfs.enable = true;
