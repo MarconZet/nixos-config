@@ -7,6 +7,7 @@
   imports = [
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
+    #./idea-fix/idea.nix
   ];
 
   boot.loader.grub = {
@@ -22,6 +23,10 @@
     ];
   };
 
+  boot.initrd.network.ssh = {
+    enable = true;
+    authorizedKeys = ["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1S1OCIzk9c0gUFnyW9MvHUKywWacSd1eTdCgOKLlZvMd9Ip8Nfq0Q7Sj/YUfOG5cF00JM6t4rbgd7RJUyf2wFrhAfHqHSiwS+zhV6Jums9o4zD/WwtEmPYS2SfkyKnd0MVktoYuQr5uDe02ZpzkYt+8VlDqFsiZL8iQ+8m9H0Bid14BHLxNX2BYU7mwHBTfAE++q4gw4Mx/vFsEuKaBy1xfU1HOIz1kom7Th7taOG2KucSQMqTOH0mlwhAD2irFLm/bvJ7on8oe+vRAHKiGohr/hvfSZeSygRPTGJauKZyzrzqLhxlhwbCEBOC2Xml/dtg4G5cZ/tUqRfvxF3yOa3 marcinzlakowski@MacDrive.local"];
+  };
   nixpkgs.config.allowUnfree = true;
   hardware.graphics.enable = true;
   hardware.nvidia = {
