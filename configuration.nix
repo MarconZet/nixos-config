@@ -60,6 +60,13 @@
     desktopManager.gnome.enable = true;
   };
 
+  systemd.targets = {
+    sleep.enable = false;
+    suspend.enable = false;
+    hibernate.enable = false;
+    hybrid-sleep.enable = false;
+  };
+
   console.keyMap = "pl2";
 
   # Enable CUPS to print documents.
