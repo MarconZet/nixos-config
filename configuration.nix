@@ -90,6 +90,15 @@
     extraGroups = ["networkmanager" "wheel" "incus-admin"];
     packages = with pkgs; [
       firefox
+      vulkan-loader
+      vulkan-validation-layers
+      vulkan-tools
+      vulkan-tools-lunarg
+      vulkan-utility-libraries
+      spirv-tools
+      vulkan-extension-layer
+      spirv-cross
+      glslang
     ];
     password = "a";
     shell = pkgs.zsh;
@@ -143,15 +152,6 @@
     tree
     alejandra
     wget
-    vulkan-loader
-    vulkan-validation-layers
-    vulkan-tools
-    vulkan-tools-lunarg
-    vulkan-utility-libraries
-    spirv-tools
-    vulkan-extension-layer
-    spirv-cross
-    glslang
   ];
   programs.steam.enable = true;
   programs.vim.defaultEditor = true;
