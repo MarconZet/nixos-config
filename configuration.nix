@@ -7,7 +7,7 @@
   imports = [
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
-    #   ./idea-fix/idea.nix
+    ./idea-fix/idea.nix
   ];
 
   boot.loader.grub = {
