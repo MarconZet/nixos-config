@@ -152,6 +152,7 @@
     tree
     alejandra
     wget
+    efibootmgr
   ];
   programs.steam.enable = true;
   programs.vim.defaultEditor = true;
