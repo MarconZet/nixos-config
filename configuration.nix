@@ -153,6 +153,7 @@
     alejandra
     wget
     efibootmgr
+    rpcs3
   ];
   programs.steam.enable = true;
   programs.vim.defaultEditor = true;
