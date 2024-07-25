@@ -163,7 +163,13 @@
     efibootmgr
     rpcs3
   ];
-  programs.steam.enable = true;
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+    localNetworkGameTransfers.openFirewall = true;
+  };
+
   programs.vim.defaultEditor = true;
   #virtualisation.incus.enable = true;
   #virtualisation.lxc.lxcfs.enable = true;
