@@ -18,7 +18,7 @@
   home.stateVersion = "24.05"; # Please read the comment before changing.
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
-    # jetbrains.idea-ultimate
+    discord
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
