@@ -98,6 +98,7 @@
     extraGroups = ["networkmanager" "wheel" "incus-admin"];
     packages = with pkgs; [
       firefox
+      rpcs3
       vulkan-loader
       vulkan-validation-layers
       vulkan-tools
