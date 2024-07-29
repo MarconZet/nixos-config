@@ -56,7 +56,6 @@
   services.xserver = {
     enable = true;
     videoDrivers = ["nvidia"];
-    layout = "pl";
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
   };
@@ -81,17 +80,7 @@
     jack.enable = true;
   };
 
-  # Enable sound with pipewire.
-  #sound.enable = true;
   hardware.pulseaudio.enable = false;
-  #security.rtkit.enable = true;
-  #services.pipewire = {
-  #  enable = true;
-  #  alsa.enable = true;
-  #  alsa.support32Bit = true;
-  #  pulse.enable = true;
-  #  #media-session.enable = true;
-  #};
 
   users.users.marcin = {
     isNormalUser = true;
