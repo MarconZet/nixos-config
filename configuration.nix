@@ -56,6 +56,7 @@
   services.xserver = {
     enable = true;
     videoDrivers = ["nvidia"];
+    layout = "pl";
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
   };
