@@ -181,7 +181,7 @@
   };
 
   boot.kernelModules = ["nf_nat_ftp" "br_netfilter" "iptable_filter" "iptable_raw" "iptable_nat"];
-  security.apparmor.enable = false;
+  security.apparmor.enable = true;
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
