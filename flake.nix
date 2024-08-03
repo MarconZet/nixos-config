@@ -13,12 +13,14 @@
   outputs = {
     self,
     nixpkgs,
-    hyprland,
-    hyprland-plugins,
     ...
-  } @ inputs: {
+  } @ inputs: let
+    inherit (self) outputs;
+  in {
+    overlays = import ./overlays {inherit inputs;};
+
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
+      specialArgs = {inherit inputs outputs;};
       modules = [
         ./configuration.nix
         inputs.home-manager.nixosModules.default
