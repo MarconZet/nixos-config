@@ -100,6 +100,7 @@
       vulkan-extension-layer
       spirv-cross
       glslang
+      teamspeak_client
     ];
     password = "a";
     shell = pkgs.zsh;
