@@ -146,7 +146,10 @@
     package = pkgs.jdk17;
   };
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings = {
+    experimental-features = ["nix-command" "flakes"];
+    warn-dirty = false;
+  };
 
   environment.systemPackages = with pkgs; [
     git
