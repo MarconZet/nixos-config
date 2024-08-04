@@ -67,6 +67,7 @@
     enable = true;
     videoDrivers = ["nvidia"];
     displayManager.gdm.enable = true;
+    windowManager.awesome.enable = true;
     desktopManager.gnome.enable = true;
   };
 
