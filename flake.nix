@@ -13,18 +13,30 @@
   outputs = {
     self,
     nixpkgs,
+    home-manager,
     ...
   } @ inputs: let
     inherit (self) outputs;
   in {
     overlays = import ./overlays {inherit inputs;};
 
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs outputs;};
-      modules = [
-        ./configuration.nix
-        inputs.home-manager.nixosModules.default
-      ];
+    nixosConfigurations = {
+      melchior = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./hosts/melchior/configuration.nix
+        ];
+      };
+      baltazar = {};
+      casper = {};
+    };
+
+    homeConfigurations = {
+      marcin = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+
+        modules = [./home/home.nix];
+      };
     };
   };
 }

@@ -2,7 +2,7 @@
 
 set -e
 pushd ~/nixos/
-$EDITOR configuration.nix
+$EDITOR .
 
 if git diff --quiet '*.nix'; then
     echo "No changes detected, exiting."
@@ -17,7 +17,7 @@ git --no-pager diff -U0 '*.nix'
 
 echo "NixOS Rebuilding..."
 
-sudo nixos-rebuild switch --flake ~/nixos#default
+sudo nixos-rebuild switch --flake ~/nixos#melchior
 
 current=$(nixos-rebuild list-generations | grep current)
 

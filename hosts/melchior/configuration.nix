@@ -116,13 +116,6 @@
   };
   users.mutableUsers = false;
 
-  home-manager = {
-    extraSpecialArgs = {inherit inputs;};
-    users = {
-      "marcin" = import ./home.nix;
-    };
-  };
-
   security.sudo.extraRules = [
     {
       users = ["marcin"];
@@ -179,7 +172,7 @@
 
   networking.hostId = "09400c19";
   networking = {
-    hostName = "nixos";
+    hostName = "melchior";
     networkmanager.enable = true;
     nftables.enable = true;
     firewall = {
