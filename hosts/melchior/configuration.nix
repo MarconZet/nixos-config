@@ -68,7 +68,7 @@
     videoDrivers = ["nvidia"];
     displayManager.gdm.enable = true;
     windowManager.awesome.enable = true;
-    desktopManager.gnome.enable = false;
+    #desktopManager.gnome.enable = false;
   };
 
   programs.hyprland = {
