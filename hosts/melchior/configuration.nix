@@ -71,10 +71,10 @@
     desktopManager.gnome.enable = true;
   };
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
+  #  programs.hyprland = {
+  #    enable = true;
+  #    xwayland.enable = true;
+  #  };
 
   systemd.targets = {
     sleep.enable = false;
