@@ -108,7 +108,7 @@
       spirv-cross
       glslang
       teamspeak_client
-      #   jetbrains.idea-ultimate
+      jetbrains.idea-ultimate
     ];
     password = "a";
     shell = pkgs.zsh;
