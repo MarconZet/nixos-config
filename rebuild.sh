@@ -2,7 +2,6 @@
 
 set -e
 pushd ~/nixos/
-$EDITOR .
 
 if git diff --quiet '*.nix'; then
     echo "No changes detected, exiting."

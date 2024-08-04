@@ -45,7 +45,10 @@
     package = config.boot.kernelPackages.nvidiaPackages.production;
   };
 
-  time.timeZone = "Europe/Warsaw";
+  time = {
+    timeZone = "Europe/Warsaw";
+    hardwareClockInLocalTime = true;
+  };
 
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
