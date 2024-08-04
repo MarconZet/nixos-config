@@ -70,6 +70,11 @@
     desktopManager.gnome.enable = true;
   };
 
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
   systemd.targets = {
     sleep.enable = false;
     suspend.enable = false;
@@ -190,6 +195,7 @@
 
   boot.kernelModules = ["nf_nat_ftp" "br_netfilter" "iptable_filter" "iptable_raw" "iptable_nat"];
   security.apparmor.enable = true;
+  security.polkit.enable = true;
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
