@@ -150,6 +150,10 @@
     histSize = 10000;
     ohMyZsh.enable = true;
     ohMyZsh.theme = "af-magic";
+    shellAliases = {
+      nrs = "~/nixos/home/scripts/rebuild.sh";
+      rw = "~/nixos/home/scripts/boot_to_windows.sh";
+    };
   };
 
   programs.java = {
