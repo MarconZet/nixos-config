@@ -173,6 +173,7 @@
     wget
     efibootmgr
     rpcs3
+    rclone
   ];
   programs.steam = {
     enable = true;
