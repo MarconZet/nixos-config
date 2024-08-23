@@ -120,6 +120,7 @@
     spirv-tools
     spirv-cross
     glslang
+    ffmpeg
   ];
 
   programs.vim.defaultEditor = true;
