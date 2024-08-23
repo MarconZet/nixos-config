@@ -25,14 +25,12 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/melchior/configuration.nix
-          inputs.home-manager.nixosModules.default
         ];
       };
       baltazar = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/baltazar/configuration.nix
-          inputs.home-manager.nixosModules.default
         ];
       };
       casper = {};
