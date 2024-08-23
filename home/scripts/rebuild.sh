@@ -15,8 +15,9 @@ alejandra . &>/dev/null \
 git --no-pager diff -U0 '*.nix'
 
 echo "NixOS Rebuilding..."
+hostname=$(hostname)
 
-sudo nixos-rebuild switch --flake ~/nixos#melchior
+sudo nixos-rebuild switch --flake ~/nixos#$hostname
 
 current=$(nixos-rebuild list-generations | grep current)
 

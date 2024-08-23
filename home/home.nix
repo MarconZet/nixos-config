@@ -18,12 +18,12 @@ in {
     allowBroken = true;
   };
 
-  imports = [
-    (import ./hyprland.nix {inherit config pkgs lib hyprland;})
-  ];
+  # imports = [
+  #   (import ./hyprland.nix {inherit config pkgs lib hyprland;})
+  # ];
 
   home.packages = with pkgs; [
-    discord
+    #discord
   ];
 
   home.file = {

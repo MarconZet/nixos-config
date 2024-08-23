@@ -17,6 +17,9 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
+
+    #system = "x86_64-linux";
+    system = "aarch64-linux";
   in {
     overlays = import ./overlays {inherit inputs;};
 
@@ -25,18 +28,17 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/melchior/configuration.nix
+          inputs.home-manager.nixosModules.default
         ];
       };
-      baltazar = {};
-      casper = {};
-    };
-
-    homeConfigurations = {
-      marcin = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-
-        modules = [./home/home.nix];
+      baltazar = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./hosts/baltazar/configuration.nix
+          inputs.home-manager.nixosModules.default
+        ];
       };
+      casper = {};
     };
   };
 }
