@@ -5,8 +5,6 @@ pushd ~/nixos/
 
 if git diff --quiet '*.nix'; then
     echo "No changes detected, exiting."
-    popd
-    exit 0
 fi
 
 alejandra . &>/dev/null \
