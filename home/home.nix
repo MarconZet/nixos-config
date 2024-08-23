@@ -23,6 +23,9 @@ in {
   # ];
 
   home.packages = with pkgs; [
+    firefox
+    #teamspeak_client
+    #jetbrains.idea-ultimate
     #discord
   ];
 

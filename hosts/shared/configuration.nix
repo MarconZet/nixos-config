@@ -49,15 +49,6 @@
     description = "Marcin";
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
-      firefox
-      vulkan-tools
-      vulkan-tools-lunarg
-      vulkan-utility-libraries
-      spirv-tools
-      spirv-cross
-      glslang
-      #teamspeak_client
-      #jetbrains.idea-ultimate
     ];
     password = "a";
     shell = pkgs.zsh;
@@ -123,6 +114,12 @@
     efibootmgr
     rpcs3
     rclone
+    vulkan-tools
+    vulkan-tools-lunarg
+    vulkan-utility-libraries
+    spirv-tools
+    spirv-cross
+    glslang
   ];
 
   programs.vim.defaultEditor = true;
