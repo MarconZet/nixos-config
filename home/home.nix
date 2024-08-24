@@ -12,8 +12,6 @@ in {
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   programs.home-manager.enable = true;
-  #home-manager.useGlobalPkgs = true;
-  #home-manager.useUserPackages = true;
   #nixpkgs.config = {
   #  allowUnfree = true;
   #  allowBroken = true;
@@ -41,7 +39,9 @@ in {
       ];
     };
   };
-
+  programs.waybar = {
+    enable = true;
+  };
   programs.git = {
     enable = true;
     userEmail = "25779550+MarconZet@users.noreply.github.com";

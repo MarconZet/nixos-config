@@ -23,6 +23,8 @@
     users = {
       "marcin" = import ../../home/home.nix;
     };
+    useGlobalPkgs = true;
+    useUserPackages = true;
   };
 
   time = {
