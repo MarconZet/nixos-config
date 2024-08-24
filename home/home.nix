@@ -43,6 +43,8 @@ in {
   programs.waybar = {
     enable = true;
     systemd.enable = true;
+    #settings = builtins.fromJSON (builtins.readFile ./waybar/config.txt);
+    style = ./waybar/style.css;
   };
   programs.kitty = {
     enable = true;
