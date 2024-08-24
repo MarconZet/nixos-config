@@ -97,11 +97,6 @@
     package = pkgs.jdk17;
   };
 
-  #programs.hyprland = {
-  #  enable = true;
-  #  package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-  #};
-
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
     warn-dirty = false;

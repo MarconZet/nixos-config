@@ -12,15 +12,12 @@ in {
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   programs.home-manager.enable = true;
-
-  nixpkgs.config = {
-    allowUnfree = true;
-    allowBroken = true;
-  };
-
-  # imports = [
-  #   (import ./hyprland.nix {inherit config pkgs lib hyprland;})
-  # ];
+  #home-manager.useGlobalPkgs = true;
+  #home-manager.useUserPackages = true;
+  #nixpkgs.config = {
+  #  allowUnfree = true;
+  #  allowBroken = true;
+  #};
 
   home.packages = with pkgs; [
     firefox
@@ -31,6 +28,18 @@ in {
   ];
 
   home.file = {
+  };
+
+  wayland.windowManager.hyprland = {
+    enable = true;
+    #package = inputs.hyprland.packages.${pkgs.system}.default;
+    settings = {
+      "$mod" = "SUPER";
+      bind = [
+        "$mod, F, exec, firefox"
+        ", Print, exec, grimblast copy area"
+      ];
+    };
   };
 
   programs.git = {
