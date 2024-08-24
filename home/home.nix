@@ -43,6 +43,10 @@ in {
     enable = true;
     systemd.enable = true;
   };
+  programs.kitty = {
+    enable = true;
+  };
+
   programs.git = {
     enable = true;
     userEmail = "25779550+MarconZet@users.noreply.github.com";
