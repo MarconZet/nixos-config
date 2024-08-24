@@ -30,6 +30,7 @@ in {
 
   wayland.windowManager.hyprland = {
     enable = true;
+    systemd.enable = true;
     #package = inputs.hyprland.packages.${pkgs.system}.default;
     settings = {
       "$mod" = "SUPER";
