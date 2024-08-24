@@ -2,13 +2,17 @@
   config,
   lib,
   pkgs,
-  hyprland,
+  inputs,
   ...
 }: {
   wayland.windowManager.hyprland = {
     enable = true;
-    package = pkgs.hyprland;
-    systemdIntegration = true;
-    systemd.enable = true;
+    settings = {
+      "$mod" = "SUPER";
+      bind = [
+        "$mod, F, exec, firefox"
+        ", Print, exec, grimblast copy area"
+      ];
+    };
   };
 }

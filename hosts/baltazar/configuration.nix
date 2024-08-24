@@ -18,7 +18,6 @@
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
-    windowManager.awesome.enable = true;
     desktopManager.gnome.enable = true;
   };
 

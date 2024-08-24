@@ -8,6 +8,7 @@
     hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
 
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    hyprland-plugins.inputs.hyprland.follows = "hyprland";
   };
 
   outputs = {

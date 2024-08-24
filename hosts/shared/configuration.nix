@@ -8,15 +8,16 @@
   imports = [
     inputs.home-manager.nixosModules.default
   ];
+
   nixpkgs = {
     overlays = [outputs.overlays.modifications];
 
     config = {
       allowUnfree = true;
       allowUnfreePredicate = _:true;
-      # allowUnsupportedSystem = true;
     };
   };
+
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users = {
@@ -96,14 +97,16 @@
     package = pkgs.jdk17;
   };
 
-  #  programs.hyprland = {
-  #    enable = true;
-  #    xwayland.enable = true;
-  #  };
+  #programs.hyprland = {
+  #  enable = true;
+  #  package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+  #};
 
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
     warn-dirty = false;
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
 
   environment.systemPackages = with pkgs; [
