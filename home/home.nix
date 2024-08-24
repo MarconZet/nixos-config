@@ -41,6 +41,7 @@ in {
   };
   programs.waybar = {
     enable = true;
+    systemd.enable = true;
   };
   programs.git = {
     enable = true;
