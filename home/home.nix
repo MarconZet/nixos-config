@@ -67,12 +67,6 @@ in {
         pseudotile = yes
         preserve_split = yes
       }
-      master {
-        new_is_master = true
-        special_scale_factor = 0.8
-        new_is_master = true
-        no_gaps_when_only = false
-      }
       # cursor_inactive_timeout = 0
       decoration {
         active_opacity = 1
