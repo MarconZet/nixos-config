@@ -122,6 +122,7 @@
     spirv-tools
     spirv-cross
     glslang
+    eww-wayland
     #ffmpeg
   ];
 
