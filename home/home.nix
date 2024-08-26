@@ -38,7 +38,6 @@ in {
       bind = CTRL, Q, exec, kitty
       bind = CTRL, W, exec, foot
       bind = CTRL, F, exec, firefox
-      debug:disable_logs = false
       monitor = Virtual-1, 1920x1440, 0x0, 1
       input {
         kb_layout = us
