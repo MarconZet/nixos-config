@@ -35,7 +35,8 @@ in {
     #package = inputs.hyprland.packages.${pkgs.system}.default;
     extraConfig = ''
       $mainMod = SUPER
-      bind = CTRL, Q, exec, kitty
+      bind = , Q, exec, kitty
+      bind = , F, exec, firefox
       monitor=,preferred,auto,1
       input {
         kb_layout = us
