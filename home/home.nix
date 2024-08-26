@@ -29,17 +29,122 @@ in {
   home.file = {
   };
 
-  wayland.windowManager.hyprland = {
+  wayland.windowManager.hyprland = with colors; {
     enable = true;
     systemd.enable = true;
     #package = inputs.hyprland.packages.${pkgs.system}.default;
-    settings = {
-      "$mod" = "SUPER";
-      bind = [
-        "$mod, F, exec, firefox"
-        ", Print, exec, grimblast copy area"
-      ];
-    };
+    extraConfig = ''
+      $mainMod = SUPER
+      monitor=,preferred,auto,1
+      input {
+        kb_layout = us
+        kb_variant =
+        kb_model =
+        kb_options = caps:escape
+        kb_rules =
+        follow_mouse = 1 # 0|1|2|3
+        float_switch_override_focus = 2
+        numlock_by_default = true
+        touchpad {
+        natural_scroll = yes
+        }
+        sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
+      }
+      general {
+        gaps_in = 20
+        gaps_out = 20
+        border_size = 0
+        col.active_border = rgb(${accent})
+        col.inactive_border = rgba(595959aa)
+        layout = dwindle # master|dwindle
+      }
+      dwindle {
+        no_gaps_when_only = false
+        force_split = 0
+        special_scale_factor = 0.8
+        split_width_multiplier = 1.0
+        use_active_for_splits = true
+        pseudotile = yes
+        preserve_split = yes
+      }
+      master {
+        new_is_master = true
+        special_scale_factor = 0.8
+        new_is_master = true
+        no_gaps_when_only = false
+      }
+      # cursor_inactive_timeout = 0
+      decoration {
+        active_opacity = 1
+        inactive_opacity = 1
+        fullscreen_opacity = 1.0
+        rounding = 3
+        drop_shadow = true
+        shadow_range = 4
+        shadow_render_power = 3
+        shadow_ignore_window = true
+      # col.shadow =
+      # col.shadow_inactive
+      # shadow_offset
+        dim_inactive = false
+      # dim_strength = #0.0 ~ 1.0
+        blur {
+          enabled: false
+          size = 20
+          passes = 4
+          new_optimizations = true
+        }
+      }
+      animations {
+        enabled=1
+        bezier = md3_standard, 0.2, 0, 0, 1
+        bezier = md3_decel, 0.05, 0.7, 0.1, 1
+        bezier = md3_accel, 0.3, 0, 0.8, 0.15
+        bezier = overshot, 0.05, 0.9, 0.1, 1.1
+        bezier = crazyshot, 0.1, 1.5, 0.76, 0.92
+        bezier = hyprnostretch, 0.05, 0.9, 0.1, 1.0
+        bezier = fluent_decel, 0.1, 1, 0, 1
+        # Animation configs
+        animation = windows, 1, 2, md3_decel, popin 80%
+        animation = border, 1, 10, default
+        animation = fade, 1, 2, default
+        animation = workspaces, 1, 3, md3_decel
+        animation = specialWorkspace, 1, 3, md3_decel, slidevert
+      }
+      plugin {
+        hyprbars {
+          bar_color = rgb(${darker})
+          bar_height = 45
+          bar_text_font = "Rubik"
+          bar_text_align = left
+          bar_part_of_window = true
+          bar_button_padding = 14
+          bar_padding = 14
+          bar_precedence_over_border = true
+          hyprbars-button = rgb(${color1}), 16, , hyprctl dispatch killactive
+          hyprbars-button = rgb(${color2}), 16, , hyprctl dispatch fullscreen 1
+        }
+      }
+      gestures {
+        workspace_swipe = true
+        workspace_swipe_fingers = 4
+        workspace_swipe_distance = 250
+        workspace_swipe_invert = true
+        workspace_swipe_min_speed_to_force = 15
+        workspace_swipe_cancel_ratio = 0.5
+        workspace_swipe_create_new = true
+      }
+      misc {
+        disable_autoreload = true
+        disable_hyprland_logo = true
+        always_follow_on_dnd = true
+        layers_hog_keyboard_focus = true
+        animate_manual_resizes = false
+        enable_swallow = true
+        swallow_regex =
+        focus_on_activate = true
+      }
+    '';
   };
 
   programs.waybar = with colors; {
