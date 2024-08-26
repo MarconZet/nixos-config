@@ -36,7 +36,7 @@ in {
     extraConfig = ''
       $mainMod = SUPER
       bind = CTRL, Q, exec, kitty
-      bind = CTRL, W, exec, kitty
+      bind = CTRL, W, exec, foot
       bind = CTRL, F, exec, firefox
       monitor=,preferred,auto,1
       input {

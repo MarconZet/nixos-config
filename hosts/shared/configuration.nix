@@ -122,7 +122,7 @@
     spirv-tools
     spirv-cross
     glslang
-    eww
+    htop
     #ffmpeg
   ];
 
