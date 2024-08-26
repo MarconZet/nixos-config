@@ -35,6 +35,7 @@ in {
     #package = inputs.hyprland.packages.${pkgs.system}.default;
     extraConfig = ''
       $mainMod = SUPER
+      bind = CTRL, Q, exec, kitty
       monitor=,preferred,auto,1
       input {
         kb_layout = us
@@ -82,12 +83,6 @@ in {
       # shadow_offset
         dim_inactive = false
       # dim_strength = #0.0 ~ 1.0
-        blur {
-          enabled = false
-          size = 20
-          passes = 4
-          new_optimizations = true
-        }
       }
       animations {
         enabled=1
