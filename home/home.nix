@@ -83,7 +83,7 @@ in {
         dim_inactive = false
       # dim_strength = #0.0 ~ 1.0
         blur {
-          enabled: false
+          enabled = false
           size = 20
           passes = 4
           new_optimizations = true
