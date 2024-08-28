@@ -1,0 +1,137 @@
+{
+    "layer": "top", 
+    "position": "top", 
+    "margin": "9 13 -10 18",
+    
+    "modules-left": ["hyprland/workspaces", "hyprland/language", "keyboard-state", "hyprland/submap"],
+    "modules-center": ["clock", "custom/weather"],
+    "modules-right": ["pulseaudio", "custom/mem", "cpu", "backlight", "battery", "tray"],
+
+    "hyprland/workspaces": {
+        "disable-scroll": true
+    },
+
+    "hyprland/language": {
+        "format-en": "US",
+        "format-ru": "RU",
+	"min-length": 5,
+	"tooltip": false
+    },
+
+    "keyboard-state": {
+        
+        "capslock": true,
+        "format": "{icon} ",
+        "format-icons": {
+            "locked": " ",
+            "unlocked": ""
+        }
+    },
+
+    "custom/pacman": {
+        "format": "{} ",
+        "interval": 3600,                     			
+        "exec": "(checkupdates;pacman -Qm | aur vercmp) | wc -l",	
+        "exec-if": "exit 0",                  			
+        "on-click": "foot sh -c 'yay; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar", 
+        "signal": 8,
+        "tooltip": false
+    },
+
+    "custom/mail": {
+        "format": "{} ",
+        "exec": "$HOME/.config/waybar/scripts/checkgmail.py",
+        "interval": 120,
+        "on-click": "google-chrome-stable https://mail.google.com/mail/u/0/#inbox ; pkill -SIGRTMIN+9 waybar",
+        "signal": 9,
+        "tooltip": false
+    },
+
+    "hyprland/submap": {
+        "format": "pon {}"
+    },
+
+    "clock": {
+        
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%a, %d %b, %I:%M %p}"
+    },
+
+    "custom/weather": {
+        "format": "{}",
+        "tooltip": true,
+        "interval": 1800,
+        "exec": "$HOME/.config/waybar/scripts/wttr.py",
+        "return-type": "json"
+    },
+
+    "pulseaudio": {
+        
+        "reverse-scrolling": 1,
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "min-length": 13
+    },
+
+    "custom/mem": {
+        "format": "{} ",
+        "interval": 3,
+        "exec": "free -h | awk '/Mem:/{printf $3}'",
+        "tooltip": false
+    },
+
+    "cpu": {
+      "interval": 2,
+      "format": "{usage}% ",
+      "min-length": 6
+    },
+
+    "temperature": {
+        
+        
+        "critical-threshold": 80,
+        
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": [""],
+        "min-length": 7
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", "", ""],
+	"on-update": "$HOME/.config/waybar/scripts/check_battery.sh"
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 0
+    }
+}
