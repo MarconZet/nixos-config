@@ -20,6 +20,9 @@ in {
 
   home.packages = with pkgs; [
     firefox
+    swww
+    wl-clipboard
+    cliphist
     #teamspeak_client
     #jetbrains.idea-ultimate
     #discord
@@ -45,14 +48,14 @@ in {
 
   programs.waybar = with colors; {
     enable = true;
-    systemd.enable = true;
+    systemd.enable = false;
     style = ./ui/waybar/style.css;
-    settings = [(builtins.fromJSON (builtins.readFile ./ui/waybar/config.json))];
+    settings = [(pkgs.lib.trivial.importJSON ./ui/waybar/config.json)];
   };
 
   programs.wofi = {
     enable = true;
-    settings = {};
+    settings = pkgs.lib.trivial.importTOML ./ui/wofi/config.toml;
     style = builtins.readFile ./ui/wofi/style.css;
   };
 
