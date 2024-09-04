@@ -10,7 +10,7 @@ in {
   home.username = "marcin";
   home.homeDirectory = "/home/marcin";
   home.stateVersion = "24.05"; # Please read the comment before changing.
-
+  programs.chromium.enable = true;
   programs.home-manager.enable = true;
   #nixpkgs.config = {
   #  allowUnfree = true;
