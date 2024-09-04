@@ -22,9 +22,9 @@ in {
     swww
     wl-clipboard
     cliphist
-    #teamspeak_client
-    #jetbrains.idea-ultimate
-    #discord
+    teamspeak_client
+    jetbrains.idea-ultimate
+    discord
   ];
 
   home.file = {
