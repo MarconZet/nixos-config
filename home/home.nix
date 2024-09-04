@@ -6,7 +6,6 @@
 }: let
   hyprland = inputs.hyprland;
   hyprland-plugins = inputs.hyprland-plugins;
-  colors = import ./colors.nix {};
 in {
   home.username = "marcin";
   home.homeDirectory = "/home/marcin";
@@ -39,14 +38,14 @@ in {
 
   programs.gh.enable = true;
 
-  wayland.windowManager.hyprland = with colors; {
+  wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;
     #package = inputs.hyprland.packages.${pkgs.system}.default;
     extraConfig = builtins.readFile ./ui/hypr/hyprland.conf;
   };
 
-  programs.waybar = with colors; {
+  programs.waybar = {
     enable = true;
     systemd.enable = false;
     style = ./ui/waybar/style.css;
