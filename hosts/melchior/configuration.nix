@@ -39,6 +39,7 @@
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.production;
   };
+  services.xserver.videoDrivers = ["nvidia"];
 
   hardware.pulseaudio.enable = false;
   hardware.bluetooth = {
@@ -53,13 +54,18 @@
     hybrid-sleep.enable = false;
   };
 
-  services.xserver = {
+  programs.hyprland = {
     enable = true;
-    videoDrivers = ["nvidia"];
-    displayManager.gdm.enable = true;
-    windowManager.awesome.enable = true;
-    desktopManager.gnome.enable = true;
   };
+
+  environment.variables.NIXOS_OZONE_WL = "1";
+  # services.xserver = {
+  #   enable = true;
+  #   videoDrivers = ["nvidia"];
+  #   displayManager.gdm.enable = true;
+  #   windowManager.awesome.enable = true;
+  #   desktopManager.gnome.enable = true;
+  # };
 
   services.printing.enable = true;
   services.pipewire = {
@@ -67,7 +73,7 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    jack.enable = true;
+    # jack.enable = true;
   };
 
   programs.steam = {
