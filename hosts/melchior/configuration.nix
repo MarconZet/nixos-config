@@ -60,15 +60,8 @@
   };
 
   environment.variables.NIXOS_OZONE_WL = "1";
-  # services.xserver = {
-  #   enable = true;
-  #   videoDrivers = ["nvidia"];
-  #   displayManager.gdm.enable = true;
-  #   windowManager.awesome.enable = true;
-  #   desktopManager.gnome.enable = true;
-  # };
 
-  services.printing.enable = true;
+  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -84,6 +77,9 @@
     localNetworkGameTransfers.openFirewall = true;
   };
 
+  environment.systemPackages = with pkgs; [
+    bluez
+  ];
   networking = {
     hostName = "melchior";
     hostId = "09400c19";

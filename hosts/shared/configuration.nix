@@ -79,7 +79,6 @@
 
   security.apparmor.enable = true;
   security.polkit.enable = true;
-  security.rtkit.enable = true;
 
   programs.zsh = {
     enable = true;
@@ -116,11 +115,6 @@
     efibootmgr
     rpcs3
     rclone
-    vulkan-tools
-    vulkan-tools-lunarg
-    vulkan-utility-libraries
-    spirv-tools
-    spirv-cross
     glslang
     htop
     #ffmpeg
