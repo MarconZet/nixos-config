@@ -113,11 +113,9 @@
     alejandra
     wget
     efibootmgr
-    rpcs3
     rclone
     glslang
     htop
-    #ffmpeg
   ];
 
   programs.vim.defaultEditor = true;

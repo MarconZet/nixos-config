@@ -79,7 +79,10 @@
 
   environment.systemPackages = with pkgs; [
     bluez
+    rpcs3
+    ffmpeg
   ];
+
   networking = {
     hostName = "melchior";
     hostId = "09400c19";
