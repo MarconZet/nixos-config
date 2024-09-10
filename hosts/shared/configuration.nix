@@ -100,6 +100,12 @@
     package = pkgs.jdk17;
   };
 
+  programs._1password.enable = true;
+  programs._1password-gui = {
+    enable = true;
+    polkitPolicyOwners = ["marcin"];
+  };
+
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
     warn-dirty = false;
