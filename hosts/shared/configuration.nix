@@ -52,7 +52,7 @@
   users.users.marcin = {
     isNormalUser = true;
     description = "Marcin";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "i2c"];
     packages = with pkgs; [
     ];
     password = "a";
