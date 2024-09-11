@@ -28,7 +28,7 @@
     "net.ipv4.conf.default.forwarding" = true;
   };
 
-  boot.kernelModules = ["nf_nat_ftp" "br_netfilter" "iptable_filter" "iptable_raw" "iptable_nat"];
+  boot.kernelModules = ["i2c_dev"];
 
   hardware.graphics.enable = true;
   hardware.nvidia = {
