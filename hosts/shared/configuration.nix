@@ -73,6 +73,10 @@
           command = "/run/current-system/sw/bin/nix-collect-garbage";
           options = ["NOPASSWD"];
         }
+        {
+          command = "/run/current-system/sw/bin/efibootmgr";
+          options = ["NOPASSWD"];
+        }
       ];
     }
   ];
