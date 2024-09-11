@@ -71,11 +71,11 @@
     localNetworkGameTransfers.openFirewall = true;
   };
 
-  services.ddccontrol.enable = true;
   environment.systemPackages = with pkgs; [
     bluez
     rpcs3
     ffmpeg
+    ddcutil
   ];
 
   networking = {
