@@ -20,6 +20,7 @@ in {
     swww
     wl-clipboard
     cliphist
+    pavucontrol
     teamspeak_client
     jetbrains.idea-ultimate
     discord
