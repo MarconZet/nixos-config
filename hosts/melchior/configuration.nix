@@ -23,16 +23,6 @@
     ];
   };
 
-  boot.kernel.sysctl = {
-    "net.ipv4.conf.all.forwarding" = true;
-    "net.ipv4.conf.default.forwarding" = true;
-  };
-
-  boot.kernelModules = ["i2c_dev"];
-  services.udev.extraRules = ''
-    KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
-  '';
-
   hardware.graphics.enable = true;
   hardware.nvidia = {
     modesetting.enable = true;
@@ -80,6 +70,7 @@
     localNetworkGameTransfers.openFirewall = true;
   };
 
+  services.ddccontrol.enable = true;
   environment.systemPackages = with pkgs; [
     bluez
     rpcs3
