@@ -17,7 +17,6 @@ in {
   #};
 
   home.packages = with pkgs; [
-    firefox
     swww
     wl-clipboard
     cliphist
@@ -25,9 +24,6 @@ in {
     jetbrains.idea-ultimate
     discord
   ];
-
-  home.file = {
-  };
 
   programs.git = {
     enable = true;
@@ -63,6 +59,9 @@ in {
 
   programs.chromium = {
     enable = true;
-    extensions = [{id = "aeblfdkhhhdcdjpifhhbdiojplfjncoa";}];
+    extensions = [
+      {id = "aeblfdkhhhdcdjpifhhbdiojplfjncoa";}
+      {id = "aeblfdkhhhdcdjpifhhbdiojplfjncoa";}
+    ];
   };
 }
