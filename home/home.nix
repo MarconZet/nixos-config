@@ -61,7 +61,7 @@ in {
     enable = true;
     extensions = [
       {id = "aeblfdkhhhdcdjpifhhbdiojplfjncoa";}
-      {id = "aeblfdkhhhdcdjpifhhbdiojplfjncoa";}
+      {id = "dbepggeogbaibhgnhhndojpepiihcmeb";}
     ];
   };
 }
