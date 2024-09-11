@@ -23,6 +23,7 @@
     ];
   };
 
+  hardware.i2c.enable = true;
   hardware.graphics.enable = true;
   hardware.nvidia = {
     modesetting.enable = true;
