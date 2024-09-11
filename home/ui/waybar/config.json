@@ -5,7 +5,7 @@
     
     "modules-left": ["hyprland/workspaces", "hyprland/language", "keyboard-state", "hyprland/submap"],
     "modules-center": ["clock", "custom/weather"],
-    "modules-right": ["pulseaudio", "custom/mem", "cpu", "backlight", "battery", "tray"],
+    "modules-right": ["pulseaudio", "custom/mem", "cpu", "backlight", "tray"],
 
     "hyprland/workspaces": {
         "disable-scroll": true
@@ -26,25 +26,6 @@
             "locked": " ",
             "unlocked": ""
         }
-    },
-
-    "custom/pacman": {
-        "format": "{} ",
-        "interval": 3600,                     			
-        "exec": "(checkupdates;pacman -Qm | aur vercmp) | wc -l",	
-        "exec-if": "exit 0",                  			
-        "on-click": "foot sh -c 'yay; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar", 
-        "signal": 8,
-        "tooltip": false
-    },
-
-    "custom/mail": {
-        "format": "{} ",
-        "exec": "$HOME/.config/waybar/scripts/checkgmail.py",
-        "interval": 120,
-        "on-click": "google-chrome-stable https://mail.google.com/mail/u/0/#inbox ; pkill -SIGRTMIN+9 waybar",
-        "signal": 9,
-        "tooltip": false
     },
 
     "hyprland/submap": {
@@ -115,19 +96,6 @@
         "format": "{percent}% {icon}",
         "format-icons": [""],
         "min-length": 7
-    },
-
-    "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", "", ""],
-	"on-update": "$HOME/.config/waybar/scripts/check_battery.sh"
     },
 
     "tray": {
