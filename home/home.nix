@@ -24,6 +24,7 @@ in {
     teamspeak_client
     jetbrains.idea-ultimate
     discord
+    starsector
   ];
 
   programs.git = {
