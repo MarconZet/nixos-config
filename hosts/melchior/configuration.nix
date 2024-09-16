@@ -37,7 +37,7 @@
 
   hardware.pulseaudio.enable = false;
   hardware.bluetooth = {
-    enable = true;
+    enable = false;
     powerOnBoot = true;
   };
   services.blueman.enable = true;
