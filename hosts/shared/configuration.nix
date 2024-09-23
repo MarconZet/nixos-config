@@ -124,7 +124,6 @@
     wget
     efibootmgr
     rclone
-    glslang
     htop
   ];
 
