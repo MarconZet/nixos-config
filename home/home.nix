@@ -55,6 +55,10 @@ in {
     style = builtins.readFile ./ui/wofi/style.css;
   };
 
+  programs.alacritty = {
+    enable = true;
+  };
+
   programs.foot = {
     enable = true;
   };
