@@ -21,10 +21,10 @@ in {
     wl-clipboard
     cliphist
     pavucontrol
-    #teamspeak_client
-    #jetbrains.idea-ultimate
-    #discord
-    #starsector
+    teamspeak_client
+    jetbrains.idea-ultimate
+    discord
+    starsector
   ];
 
   programs.git = {
