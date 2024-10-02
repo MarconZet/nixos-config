@@ -4,8 +4,8 @@
   pkgs,
   ...
 }: let
-  hyprland = inputs.hyprland;
-  hyprland-plugins = inputs.hyprland-plugins;
+  #  hyprland = inputs.hyprland;
+  #  hyprland-plugins = inputs.hyprland-plugins;
 in {
   home.username = "marcin";
   home.homeDirectory = "/home/marcin";
