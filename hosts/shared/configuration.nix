@@ -49,6 +49,7 @@
 
   console.keyMap = "pl2";
 
+  users.defaultUserShell = pkgs.zsh;
   users.users.marcin = {
     isNormalUser = true;
     description = "Marcin";
@@ -127,7 +128,10 @@
     htop
   ];
 
-  programs.vim.defaultEditor = true;
+  programs.vim = {
+    enable = true;
+    defaultEditor = true;
+  };
 
   services.openssh = {
     enable = true;
