@@ -25,6 +25,7 @@ in {
     jetbrains.idea-ultimate
     discord
     starsector
+    apple-cursor
   ];
 
   programs.git = {
