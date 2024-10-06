@@ -85,25 +85,12 @@
   security.apparmor.enable = true;
   security.polkit.enable = true;
 
-  programs.zsh = {
-    enable = true;
-    autosuggestions.enable = true;
-    autosuggestions.async = true;
-    enableGlobalCompInit = true;
-    syntaxHighlighting.enable = true;
-    histSize = 10000;
-    ohMyZsh.enable = true;
-    ohMyZsh.theme = "af-magic";
-    shellAliases = {
-      nrs = "~/nixos/home/scripts/rebuild.sh";
-      rw = "~/nixos/home/scripts/boot_to_windows.sh";
-    };
-  };
-
   programs.java = {
     enable = true;
     package = pkgs.jdk17;
   };
+
+  programs.zsh.enable = true;
 
   programs._1password.enable = true;
   programs._1password-gui = {
