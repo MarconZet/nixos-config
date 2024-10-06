@@ -58,6 +58,7 @@ in {
 
   programs.alacritty = {
     enable = true;
+    settings = pkgs.lib.trivial.importTOML ./ui/alacritty/config.toml;
   };
 
   programs.foot = {
