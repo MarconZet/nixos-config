@@ -13,7 +13,7 @@ builtin_box_drawing = true
 size = 12.0
 
 [font.normal]
-family = "Ubuntu Mono"
+family = "Jetbrains Mono"
 
 [window]
 opacity = 0.95

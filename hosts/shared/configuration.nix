@@ -28,6 +28,7 @@
   };
   fonts.packages = with pkgs; [
     font-awesome
+    jetbrains-mono
   ];
   time = {
     timeZone = "Europe/Warsaw";
