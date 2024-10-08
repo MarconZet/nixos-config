@@ -83,5 +83,6 @@ in {
       {id = "aeblfdkhhhdcdjpifhhbdiojplfjncoa";}
       {id = "dbepggeogbaibhgnhhndojpepiihcmeb";}
     ];
+    commandLineArgs = ["--disable-gpu-compositing"];
   };
 }
