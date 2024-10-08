@@ -10,10 +10,10 @@ TERM = "alacritty"
 
 [font]
 builtin_box_drawing = true
-size = 13.0
+size = 12.0
 
 [font.normal]
-family = "JetBrains Mono"
+family = "Ubuntu Mono"
 
 [window]
 opacity = 0.95
