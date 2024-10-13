@@ -21,11 +21,9 @@ in {
     wl-clipboard
     cliphist
     pavucontrol
-    teamspeak_client
-    jetbrains.idea-ultimate
-    discord
-    starsector
-    apple-cursor
+    #    teamspeak_client
+    #    jetbrains.idea-ultimate
+    #    discord
   ];
 
   programs.git = {
@@ -60,6 +58,8 @@ in {
     enable = true;
     settings = pkgs.lib.trivial.importTOML ./ui/alacritty/config.toml;
   };
+
+  programs.foot.enable = true;
 
   programs.zsh = {
     enable = true;
