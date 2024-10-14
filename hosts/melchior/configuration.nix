@@ -24,7 +24,6 @@
   };
 
   boot.kernelModules = [
-    "hidraw"
   ];
 
   hardware.i2c.enable = true;
