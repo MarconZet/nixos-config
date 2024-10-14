@@ -21,9 +21,9 @@ in {
     wl-clipboard
     cliphist
     pavucontrol
-    #    teamspeak_client
-    #    jetbrains.idea-ultimate
-    #    discord
+    teamspeak_client
+    jetbrains.idea-ultimate
+    discord
   ];
 
   programs.git = {
