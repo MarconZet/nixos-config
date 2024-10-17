@@ -114,6 +114,7 @@
     efibootmgr
     rclone
     htop
+    usbutils
   ];
 
   programs.vim = {
