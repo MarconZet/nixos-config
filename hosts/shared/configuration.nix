@@ -115,6 +115,7 @@
     rclone
     htop
     usbutils
+    screen
   ];
 
   programs.vim = {
