@@ -75,7 +75,6 @@
 
   environment.systemPackages = with pkgs; [
     bluez
-    rpcs3
     ffmpeg
     ddcutil
   ];
