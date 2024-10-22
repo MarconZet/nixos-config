@@ -25,6 +25,7 @@ in {
     jetbrains.idea-ultimate
     discord
     arduino
+    piper
   ];
 
   programs.git = {
