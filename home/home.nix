@@ -26,6 +26,7 @@ in {
     discord
     arduino
     piper
+    winbox
   ];
 
   programs.git = {
