@@ -26,6 +26,13 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/melchior/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.extraSpecialArgs = {inherit inputs;};
+            home-manager.users.marcin = import ./home/home.nix;
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+          }
         ];
       };
       baltazar = nixpkgs.lib.nixosSystem {
