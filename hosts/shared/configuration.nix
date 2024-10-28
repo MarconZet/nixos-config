@@ -18,14 +18,6 @@
     };
   };
 
-  home-manager = {
-    extraSpecialArgs = {inherit inputs;};
-    users = {
-      "marcin" = import ../../home/home.nix;
-    };
-    useGlobalPkgs = true;
-    useUserPackages = true;
-  };
   fonts.packages = with pkgs; [
     font-awesome
     jetbrains-mono
