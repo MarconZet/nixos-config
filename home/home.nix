@@ -1,15 +1,6 @@
-{
-  inputs,
-  config,
-  pkgs,
-  ...
-}: let
-  #  hyprland = inputs.hyprland;
-  #  hyprland-plugins = inputs.hyprland-plugins;
-in {
+{pkgs, ...}: {
   home.username = "marcin";
   home.homeDirectory = "/home/marcin";
-  home.stateVersion = "24.05"; # Please read the comment before changing.
   programs.home-manager.enable = true;
   #nixpkgs.config = {
   #  allowUnfree = true;
@@ -17,15 +8,6 @@ in {
   #};
   imports = [
     (import ./ui {inherit pkgs;})
-  ];
-
-  home.packages = with pkgs; [
-    teamspeak_client
-    jetbrains.idea-ultimate
-    discord
-    arduino
-    piper
-    winbox
   ];
 
   programs.git = {
