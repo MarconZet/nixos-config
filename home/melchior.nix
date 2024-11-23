@@ -14,6 +14,7 @@ in {
     arduino
     piper
     winbox
+    ddcui
   ];
 
   imports = [
