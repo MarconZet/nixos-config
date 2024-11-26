@@ -28,6 +28,7 @@
     oh-my-zsh.enable = true;
     oh-my-zsh.theme = "af-magic";
     oh-my-zsh.plugins = ["git"];
+    initExtra = "unsetopt BEEP";
     shellAliases = {
       nrs = "~/nixos/home/scripts/rebuild.sh";
       rw = "~/nixos/home/scripts/boot_to_windows.sh";
