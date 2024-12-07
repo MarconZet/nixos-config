@@ -74,7 +74,6 @@
     localNetworkGameTransfers.openFirewall = true;
   };
 
-  programs.anime-game-launcher.enable = true;
   programs.anime-games-launcher.enable = true;
 
   services.ratbagd.enable = true;
