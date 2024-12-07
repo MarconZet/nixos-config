@@ -68,10 +68,6 @@
           command = "/run/current-system/sw/bin/nix-collect-garbage";
           options = ["NOPASSWD"];
         }
-        {
-          command = "/run/current-system/sw/bin/efibootmgr";
-          options = ["NOPASSWD"];
-        }
       ];
     }
   ];
@@ -102,12 +98,10 @@
     tree
     alejandra
     wget
-    efibootmgr
     rclone
     htop
     usbutils
     screen
-    neofetch
   ];
 
   programs.vim = {

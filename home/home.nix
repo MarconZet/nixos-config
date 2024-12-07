@@ -8,6 +8,7 @@
   #};
   imports = [
     (import ./ui {inherit pkgs;})
+    (import ./fastfetch {inherit pkgs;})
   ];
 
   programs.git = {
@@ -34,6 +35,4 @@
       rw = "~/nixos/home/scripts/boot_to_windows.sh";
     };
   };
-
-  home.file.".config/neofetch/config.conf".source = ./neofetch.conf;
 }

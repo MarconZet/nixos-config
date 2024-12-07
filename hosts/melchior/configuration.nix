@@ -79,6 +79,7 @@
     bluez
     ffmpeg
     ddcutil
+    efibootmgr
   ];
 
   networking = {
@@ -92,4 +93,16 @@
   };
 
   system.stateVersion = "24.05";
+
+  security.sudo.extraRules = [
+    {
+      users = ["marcin"];
+      commands = [
+        {
+          command = "/run/current-system/sw/bin/efibootmgr";
+          options = ["NOPASSWD"];
+        }
+      ];
+    }
+  ];
 }
