@@ -9,9 +9,9 @@ in {
 
   home.packages = with pkgs; [
     teamspeak_client
-    jetbrains.idea-ultimate
-    jetbrains.idea-community
     jetbrains.rust-rover
+    jetbrains.idea-community
+    jetbrains.pycharm-community
     discord
     arduino
     piper
