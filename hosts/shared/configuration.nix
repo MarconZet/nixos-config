@@ -91,6 +91,8 @@
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
     warn-dirty = false;
+    substituters = ["https://ezkea.cachix.org"];
+    trusted-public-keys = ["ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI="];
   };
 
   environment.systemPackages = with pkgs; [

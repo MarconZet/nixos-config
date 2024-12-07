@@ -3,18 +3,19 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    #    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    #    hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
 
+    home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    #    hyprland-plugins.inputs.hyprland.follows = "hyprland";
+
+    aagl.url = "github:ezKEa/aagl-gtk-on-nix";
+    aagl.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    aagl,
     ...
   } @ inputs: let
     inherit (self) outputs;

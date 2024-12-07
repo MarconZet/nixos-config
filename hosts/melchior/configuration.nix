@@ -8,6 +8,7 @@
   imports = [
     ./hardware-configuration.nix
     ../shared/configuration.nix
+    inputs.aagl.nixosModules.default
   ];
 
   boot.loader.grub = {
@@ -72,6 +73,9 @@
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
   };
+
+  programs.anime-game-launcher.enable = true;
+  programs.anime-games-launcher.enable = true;
 
   services.ratbagd.enable = true;
 
