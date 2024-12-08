@@ -9,8 +9,12 @@
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;
-    #package = inputs.hyprland.packages.${pkgs.system}.default;
     extraConfig = builtins.readFile ./hypr/hyprland.conf;
+  };
+
+  programs.hyprlock = {
+    enable = true;
+    extraConfig = builtins.readFile ./hypr/hyprlock.conf;
   };
 
   programs.waybar = {
