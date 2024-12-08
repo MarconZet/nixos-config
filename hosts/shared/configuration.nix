@@ -88,6 +88,10 @@
     polkitPolicyOwners = ["marcin"];
   };
 
+  programs.hyprland.enable = true;
+  programs.hyprlock.enable = true;
+  environment.variables.NIXOS_OZONE_WL = "1";
+
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
     warn-dirty = false;

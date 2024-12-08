@@ -53,11 +53,6 @@
     hybrid-sleep.enable = false;
   };
 
-  programs.hyprland = {
-    enable = true;
-  };
-  environment.variables.NIXOS_OZONE_WL = "1";
-
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

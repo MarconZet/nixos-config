@@ -15,18 +15,13 @@
 
   hardware.pulseaudio.enable = false;
 
-  programs.hyprland = {
-    enable = true;
-  };
-  environment.variables.NIXOS_OZONE_WL = "1";
-
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # jack.enable = true;
+    jack.enable = true;
   };
 
   networking = {
