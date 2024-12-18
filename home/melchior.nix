@@ -17,6 +17,7 @@ in {
     piper
     winbox
     ddcui
+    webcord
   ];
 
   imports = [
