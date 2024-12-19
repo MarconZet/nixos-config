@@ -8,16 +8,15 @@ in {
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   home.packages = with pkgs; [
-    teamspeak_client
     jetbrains.rust-rover
     jetbrains.idea-community
     jetbrains.pycharm-community
-    discord
     arduino
-    piper
     winbox
     ddcui
+    piper
     webcord
+    teamspeak_client
   ];
 
   imports = [
