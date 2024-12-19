@@ -91,6 +91,7 @@
   programs.hyprland.enable = true;
   environment.variables.NIXOS_OZONE_WL = "1";
   security.pam.services.hyprlock = {};
+  services.displayManager.ly.enable = true;
 
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
