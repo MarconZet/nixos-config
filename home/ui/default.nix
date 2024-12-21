@@ -43,7 +43,7 @@
       ipc = "on";
       splash = false;
       preload = ["~/nixos/images/wayland_anime_4K.png"];
-      wallpaper = ["DP-1, ~/nixos/images/wayland_anime_4K.png"];
+      wallpaper = [" , ~/nixos/images/wayland_anime_4K.png"];
     };
   };
 
