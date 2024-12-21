@@ -88,7 +88,10 @@
     polkitPolicyOwners = ["marcin"];
   };
 
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    withUWSM = false;
+  };
   environment.variables.NIXOS_OZONE_WL = "1";
   security.pam.services.hyprlock = {};
   services.displayManager.ly.enable = true;
