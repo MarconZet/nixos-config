@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    swww
     wl-clipboard
     cliphist
     pavucontrol
@@ -35,6 +34,14 @@
           on-resume = "hyprctl dispatch dpms on";
         }
       ];
+    };
+  };
+
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      preload = ["~/nixos/images/wayland_anime_4K.png"];
+      wallpaper = [" ,~/nixos/images/wayland_anime_4K.png"];
     };
   };
 
