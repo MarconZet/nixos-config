@@ -40,6 +40,7 @@
   services.hyprpaper = {
     enable = true;
     settings = {
+      ipc = "on";
       preload = ["~/nixos/images/wayland_anime_4K.png"];
       wallpaper = [" ,~/nixos/images/wayland_anime_4K.png"];
     };
