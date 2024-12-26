@@ -75,11 +75,6 @@
   security.apparmor.enable = true;
   security.polkit.enable = true;
 
-  programs.java = {
-    enable = true;
-    package = pkgs.jdk17;
-  };
-
   programs.zsh.enable = true;
 
   programs._1password.enable = true;

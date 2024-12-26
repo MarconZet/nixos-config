@@ -46,13 +46,6 @@
   };
   services.blueman.enable = true;
 
-  systemd.targets = {
-    sleep.enable = false;
-    suspend.enable = false;
-    hibernate.enable = false;
-    hybrid-sleep.enable = false;
-  };
-
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
