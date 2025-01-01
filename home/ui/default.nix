@@ -65,6 +65,22 @@
     settings = pkgs.lib.trivial.importTOML ./alacritty/config.toml;
   };
 
+  programs.kitty = {
+    enable = true;
+    font = {
+      package = pkgs.jetbrains-mono;
+      name = "Jetbrains Mono";
+      size = 12;
+    };
+    keybindings = {
+    };
+    settings = {
+      enable_audio_bell = false;
+      update_check_interval = 0;
+      scrollback_lines = 10000;
+    };
+  };
+
   programs.foot.enable = true;
 
   programs.chromium = {
