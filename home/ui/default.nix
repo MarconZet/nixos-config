@@ -79,7 +79,9 @@
       enable_audio_bell = false;
       update_check_interval = 0;
       scrollback_lines = 10000;
-      background_opacity = 0.9;
+      background_opacity = 0.95;
+      background = "#1d2021";
+      foreground = "#c5c8c6";
     };
   };
 
