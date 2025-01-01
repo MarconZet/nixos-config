@@ -75,6 +75,7 @@
     keybindings = {
     };
     settings = {
+      kitty_mod = "cmd";
       enable_audio_bell = false;
       update_check_interval = 0;
       scrollback_lines = 10000;
