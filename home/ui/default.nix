@@ -61,7 +61,7 @@
   };
 
   programs.alacritty = {
-    enable = true;
+    enable = false;
     settings = pkgs.lib.trivial.importTOML ./alacritty/config.toml;
   };
 
