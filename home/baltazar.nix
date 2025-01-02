@@ -12,6 +12,8 @@ in {
   home.packages = with pkgs; [
   ];
 
+  programs.foot.enable = true;
+
   imports = [
     (import ./home.nix {inherit pkgs;})
   ];

@@ -85,8 +85,6 @@
     };
   };
 
-  programs.foot.enable = true;
-
   programs.chromium = {
     enable = true;
     extensions = [
