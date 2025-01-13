@@ -17,6 +17,7 @@ in {
     piper
     webcord
     teamspeak_client
+    via
   ];
 
   imports = [
