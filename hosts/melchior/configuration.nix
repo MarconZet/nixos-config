@@ -83,6 +83,8 @@
     };
   };
 
+  services.udev.packages = [pkgs.via];
+
   system.stateVersion = "24.05";
 
   security.sudo.extraRules = [
