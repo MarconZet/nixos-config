@@ -18,6 +18,7 @@ in {
     webcord
     teamspeak_client
     via
+    prismlauncher
   ];
 
   imports = [
