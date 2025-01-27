@@ -3,6 +3,7 @@
     wl-clipboard
     cliphist
     pavucontrol
+    evtest
   ];
 
   wayland.windowManager.hyprland = {
@@ -82,6 +83,7 @@
       background_opacity = 0.95;
       background = "#1d2021";
       foreground = "#c5c8c6";
+      confirm_os_window_close = 0;
     };
   };
 
