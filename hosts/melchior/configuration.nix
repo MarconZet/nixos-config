@@ -71,6 +71,8 @@
     ffmpeg
     ddcutil
     efibootmgr
+    exfat
+    exfatprogs
   ];
 
   networking = {
