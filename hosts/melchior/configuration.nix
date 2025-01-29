@@ -71,7 +71,7 @@
     ffmpeg
     ddcutil
     efibootmgr
-    nilfs-utils
+    ntfs3g
   ];
 
   networking = {
