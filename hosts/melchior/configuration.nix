@@ -71,8 +71,7 @@
     ffmpeg
     ddcutil
     efibootmgr
-    exfat
-    exfatprogs
+    nilfs-utils
   ];
 
   networking = {
