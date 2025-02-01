@@ -92,6 +92,7 @@
     extensions = [
       {id = "aeblfdkhhhdcdjpifhhbdiojplfjncoa";}
       {id = "dbepggeogbaibhgnhhndojpepiihcmeb";}
+      {id = "lcpclaffcdiihapebmfgcmmplphbkjmd";}
     ];
     commandLineArgs = ["--disable-gpu-compositing"];
   };
