@@ -93,6 +93,8 @@
 
   programs.nix-ld.enable = true;
 
+  services.playerctld.enable = true;
+
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
     warn-dirty = false;
