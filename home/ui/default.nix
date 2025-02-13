@@ -4,6 +4,7 @@
     cliphist
     pavucontrol
     evtest
+    hyprshot
   ];
 
   wayland.windowManager.hyprland = {
