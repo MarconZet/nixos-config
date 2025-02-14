@@ -16,6 +16,7 @@ in {
     ddcui
     piper
     webcord
+    discord
     teamspeak_client
     via
     prismlauncher
