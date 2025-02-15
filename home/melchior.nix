@@ -21,6 +21,7 @@ in {
     via
     prismlauncher
     gparted
+    deluge
   ];
 
   imports = [
