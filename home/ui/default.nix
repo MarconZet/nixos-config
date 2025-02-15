@@ -5,6 +5,7 @@
     pavucontrol
     evtest
     hyprshot
+    ddcutil
   ];
 
   wayland.windowManager.hyprland = {

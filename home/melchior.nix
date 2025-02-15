@@ -13,7 +13,6 @@ in {
     jetbrains.pycharm-community
     arduino
     winbox
-    ddcui
     piper
     webcord
     discord

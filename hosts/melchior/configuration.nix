@@ -59,16 +59,15 @@
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
+    gamescopeSession.enable = true;
   };
-
   programs.anime-games-launcher.enable = true;
+  programs.gamemode.enable = true;
 
   services.ratbagd.enable = true;
 
   environment.systemPackages = with pkgs; [
-    bluez
     ffmpeg
-    ddcutil
     efibootmgr
     ntfs3g
   ];
