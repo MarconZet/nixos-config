@@ -22,6 +22,7 @@ in {
     prismlauncher
     gparted
     deluge
+    wineWowPackages.waylandFull
   ];
 
   imports = [
