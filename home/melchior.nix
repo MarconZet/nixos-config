@@ -22,7 +22,7 @@ in {
     gparted
     deluge
     wineWowPackages.waylandFull
-    lutris
+    bottles
   ];
 
   imports = [
