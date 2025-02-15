@@ -39,7 +39,6 @@
   };
   services.xserver.videoDrivers = ["nvidia"];
 
-  hardware.pulseaudio.enable = false;
   hardware.bluetooth = {
     enable = false;
     powerOnBoot = true;
