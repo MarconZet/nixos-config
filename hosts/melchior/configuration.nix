@@ -40,7 +40,7 @@
   services.xserver.videoDrivers = ["nvidia"];
 
   hardware.bluetooth = {
-    enable = false;
+    enable = true;
     powerOnBoot = true;
   };
   services.blueman.enable = true;
@@ -50,8 +50,8 @@
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
-    #    pulse.enable = true;
-    #    jack.enable = true;
+    pulse.enable = true;
+    raopOpenFirewall = true;
   };
 
   programs.steam = {
