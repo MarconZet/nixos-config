@@ -72,6 +72,10 @@
     ntfs3g
   ];
 
+  fonts.packages = with pkgs; [
+    dejavu_fonts
+  ];
+
   networking = {
     hostName = "melchior";
     hostId = "09400c19";
