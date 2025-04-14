@@ -61,7 +61,7 @@
     localNetworkGameTransfers.openFirewall = true;
     gamescopeSession.enable = true;
   };
-  programs.anime-games-launcher.enable = true;
+  programs.anime-games-launcher.enable = false;
   programs.gamemode.enable = true;
 
   services.ratbagd.enable = true;
