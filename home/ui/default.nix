@@ -105,6 +105,13 @@
       discord = {
         name = "Discord";
         exec = "discord --disable-gpu";
+        genericName = "Internet Messenger";
+        comment = "All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone.";
+        categories = ["Network" "InstantMessaging"];
+        icon = "discord";
+        settings = {
+          StartupWMClass = "discord";
+        };
       };
     };
   };
