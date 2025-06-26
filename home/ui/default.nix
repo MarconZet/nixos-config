@@ -98,4 +98,14 @@
     ];
     commandLineArgs = ["--disable-gpu-compositing"];
   };
+
+  xdg = {
+    enable = true;
+    desktopEntries = {
+      discord = {
+        name = "Discord";
+        exec = "discord --disable-gpu";
+      };
+    };
+  };
 }
