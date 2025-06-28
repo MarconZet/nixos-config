@@ -6,6 +6,7 @@
     evtest
     hyprshot
     ddcutil
+    ddcui
   ];
 
   wayland.windowManager.hyprland = {
