@@ -15,6 +15,11 @@
     enable = true;
     userEmail = "25779550+MarconZet@users.noreply.github.com";
     userName = "MarconZet";
+    extraConfig = {
+      push = {
+        autoSetupRemote = true;
+      };
+    };
   };
 
   programs.gh.enable = true;

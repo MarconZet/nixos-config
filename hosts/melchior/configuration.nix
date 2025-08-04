@@ -42,6 +42,11 @@
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
+    settings = {
+      General = {
+        UserspaceHID = false;
+      };
+    };
   };
   services.blueman.enable = true;
 
