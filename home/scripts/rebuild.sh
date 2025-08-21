@@ -18,7 +18,4 @@ hostname=$(hostname)
 sudo nixos-rebuild switch --flake ~/nixos#$hostname
 
 current=$(nixos-rebuild list-generations | grep current)
-
-git commit -am "$current"
-git push
 popd
