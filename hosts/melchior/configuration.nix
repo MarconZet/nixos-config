@@ -75,7 +75,11 @@
     ffmpeg
     efibootmgr
     ntfs3g
+    dotnet-sdk
   ];
+  environment.sessionVariables = {
+    DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
+  };
 
   fonts.packages = with pkgs; [
     dejavu_fonts
