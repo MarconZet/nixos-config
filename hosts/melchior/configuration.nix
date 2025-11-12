@@ -90,9 +90,8 @@
     hostId = "09400c19";
     networkmanager.enable = true;
     nftables.enable = true;
-    firewall = {
-      enable = true;
-    };
+    firewall.enable = true;
+    interfaces.enp5s0.wakeOnLan.enable = true;
   };
 
   services.udev.packages = [pkgs.via];
