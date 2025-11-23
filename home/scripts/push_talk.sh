@@ -8,7 +8,7 @@ if [[ "$action" = "on" ]]; then
   my_rand=$RANDOM
   echo "$my_rand" >"$file"
   wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 0
-  sleep 10
+  sleep 15
   n_rand=$(cat $file)
   if [[ $my_rand = $n_rand ]]; then
     wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 1
