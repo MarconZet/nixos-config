@@ -16,7 +16,8 @@ in {
     piper
     webcord
     discord
-    teamspeak_client
+    teamspeak3
+    blender
     via
     prismlauncher
     gparted
