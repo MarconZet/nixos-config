@@ -11,12 +11,13 @@ in {
     jetbrains.rust-rover
     jetbrains.idea-community
     jetbrains.pycharm-community
+    vscode
     arduino
     winbox
     piper
     webcord
     discord
-    teamspeak3
+    teamspeak6-client
     blender
     via
     prismlauncher
@@ -24,6 +25,7 @@ in {
     deluge
     wineWowPackages.waylandFull
     bottles
+    osu-lazer-bin
   ];
 
   imports = [

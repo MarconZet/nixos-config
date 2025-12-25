@@ -33,7 +33,7 @@
     modesetting.enable = true;
     powerManagement.enable = false;
     powerManagement.finegrained = false;
-    open = false;
+    open = true;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.latest;
   };
@@ -68,6 +68,24 @@
   };
   programs.anime-games-launcher.enable = true;
   programs.gamemode.enable = true;
+
+  programs.obs-studio = {
+    enable = true;
+
+    package = (
+      pkgs.obs-studio.override {
+        cudaSupport = true;
+      }
+    );
+
+    plugins = with pkgs.obs-studio-plugins; [
+      wlrobs
+      obs-backgroundremoval
+      obs-pipewire-audio-capture
+      obs-gstreamer
+      obs-vkcapture
+    ];
+  };
 
   services.ratbagd.enable = true;
 
