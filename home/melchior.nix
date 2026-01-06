@@ -25,7 +25,8 @@ in {
     deluge
     wineWowPackages.waylandFull
     bottles
-    osu-lazer-bin
+    slack
+    claude-code
   ];
 
   imports = [
