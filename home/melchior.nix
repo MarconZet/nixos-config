@@ -11,6 +11,7 @@ in {
     jetbrains.rust-rover
     jetbrains.idea-community
     jetbrains.pycharm-community
+    jetbrains.goland
     vscode
     arduino
     winbox
