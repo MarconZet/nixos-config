@@ -108,6 +108,8 @@
     enable = true;
   };
 
+  virtualisation.vmware.host.enable = true;
+
   networking = {
     hostName = "melchior";
     hostId = "09400c19";
