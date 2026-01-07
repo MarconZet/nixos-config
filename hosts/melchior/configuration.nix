@@ -104,10 +104,6 @@
     dejavu_fonts
   ];
 
-  virtualisation.docker = {
-    enable = true;
-  };
-
   virtualisation.vmware.host.enable = true;
 
   networking = {

@@ -47,7 +47,7 @@
   users.users.marcin = {
     isNormalUser = true;
     description = "Marcin";
-    extraGroups = ["networkmanager" "wheel" "i2c" "dialout" "docker"];
+    extraGroups = ["networkmanager" "wheel" "i2c" "dialout"];
     packages = with pkgs; [
     ];
     hashedPassword = "$6$NjDaTb8Klmkt9rT5$ECWEOpffRuCqloVR4zFcKmXRpnlNDC5VI3Ja4JUuXNI9qEVSAhLevcbK/DeXanO8zFKbrhRRt/kGlnY9OwSuM1";
