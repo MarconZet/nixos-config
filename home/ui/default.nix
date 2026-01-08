@@ -114,6 +114,13 @@
           StartupWMClass = "discord";
         };
       };
+      cider = {
+        name = "Music";
+        exec = "${pkgs.appimage-run}/bin/appimage-run /home/marcin/Documents/Apps/cider.AppImage";
+        comment = "Apple Music client";
+        terminal = false;
+        categories = ["AudioVideo" "Audio" "Player"];
+      };
     };
   };
 }

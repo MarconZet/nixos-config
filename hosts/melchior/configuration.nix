@@ -95,6 +95,7 @@
     ntfs3g
     dotnet-sdk
     docker-compose
+    inputs.llm-agents.packages.${pkgs.system}.codex
   ];
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";

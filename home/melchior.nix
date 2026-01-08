@@ -8,14 +8,12 @@ in {
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   home.packages = with pkgs; [
-    jetbrains.idea-community
+    jetbrains.idea
     jetbrains.gateway
-    appimage-run
     vscode
     arduino
     winbox
     piper
-    webcord
     discord
     teamspeak6-client
     blender
@@ -26,7 +24,6 @@ in {
     wineWowPackages.waylandFull
     bottles
     slack
-    claude-code
   ];
 
   imports = [

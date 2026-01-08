@@ -9,6 +9,8 @@
 
     aagl.url = "github:ezKEa/aagl-gtk-on-nix";
     aagl.inputs.nixpkgs.follows = "nixpkgs";
+
+    llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
   outputs = {
@@ -16,6 +18,7 @@
     nixpkgs,
     home-manager,
     aagl,
+    llm-agents,
     ...
   } @ inputs: let
     inherit (self) outputs;
